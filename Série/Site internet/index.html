@@ -2,49 +2,83 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien - The Last Dance</title>
     <style>
+        /* === Style de base === */
         body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
-
-    /* Image de fond */
-    background-image: url(Autres/Reina.png);
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-}
-        h1 {
-            font-size: 50px;
-        }
-        .season-block {
-            display: inline-block;
-            background-color: #11618f;
+            font-family: "Abel Static", sans-serif;
+            background-image: url("Autre/Reina.png"); /* ton fond actuel */
+            background-size: cover;
+            background-position: top center;
             color: white;
-            padding: 30px 60px;
-            margin: 20px;
-            font-size: 24px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Logo */
+        img {
+            max-width: 300px; /* taille PC */
+            height: auto;
+            display: block;
+            margin: 50px auto 20px auto;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        /* Blocs de saison */
+        .season-block {
+            background-color: rgba(34,34,34,0.8);
+            margin: 20px auto;
+            padding: 20px;
+            width: 200px;
             border-radius: 10px;
-            text-decoration: none;
-            transition: 0.3s;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
+
         .season-block:hover {
-            background-color: #45a049;
+            background-color: rgba(68,68,68,0.8);
         }
-        
+
+        a { color: white; text-decoration: none; }
+
+        /* === Responsive mobile === */
+        @media (max-width: 600px) {
+            img {
+                max-width: 80%; /* réduit logo et toutes les images */
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 1.8em; /* texte plus petit */
+            }
+
+            .season-block {
+                width: 80%;       /* bloc s’adapte à l’écran */
+                padding: 15px;
+                font-size: 1em;
+                margin: 10px auto;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Logo -->
-   <img src="Autres/Logo.png" alt="Logo du projet" width="200">
+    <img src="Autre/logo.png" alt="Logo Alien">
 
-    <!-- Nom du projet -->
+    <!-- Titre -->
     <h1>Alien - The Last Dance</h1>
 
-    <!-- Bloc Saison 1 -->
-    <a href="season1.html" class="season-block">Saison 1</a>
+    <!-- Bloc Saison -->
+    <a href="season1.html">
+        <div class="season-block">Saison 1</div>
+    </a>
 
 </body>
 </html>

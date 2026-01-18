@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>3┆🌋・𝘚é𝘫𝘰𝘶𝘳 𝘦𝘯 𝘦𝘯𝘧𝘦𝘳</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Épisode 3 - Alien: The Last Dance</title>
+<style>
+    body {
+        font-family: "Abel Static", sans-serif;
+        background-image: url("../Saison 1/Épisode 3/fond-ep3.png");
+        background-size: cover;
+        background-position: center;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
 
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 40px;
-            background-color: #f0f0f0;
-        }
+    h1 { font-size: 2em; margin: 20px 0; }
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 30px;
-        }
+    #episode-image {
+        max-width: 90%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
 
-        img {
-            max-width: 95%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
+    .nav-buttons {
+        margin: 20px 0;
+    }
 
-        .buttons {
-            margin-top: 25px;
-        }
+    button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background-color: rgba(51,51,51,0.8);
+        color: white;
+    }
 
-        button {
-            font-size: 20px;
-            padding: 12px 25px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-        }
+    button:hover { background-color: rgba(85,85,85,0.8); }
 
-        button:hover {
-            background-color: #43a047;
-        }
-    </style>
+    @media (max-width: 600px) {
+        h1 { font-size: 1.5em; }
+        button { font-size: 1em; padding: 8px 15px; }
+        #episode-image { width: 95%; }
+    }
+</style>
 </head>
 <body>
 
 <h1>3┆🌋・𝘚é𝘫𝘰𝘶𝘳 𝘦𝘯 𝘦𝘯𝘧𝘦𝘳</h1>
 
-<img id="episodeImage" src="../Saison 1/Épisode 3/1.png" alt="Page 1">
+<img id="episode-image" src="../Saison 1/Épisode 3/1.png" alt="Image 1">
 
-<div class="buttons">
-    <button onclick="prevImage()">⬅ Précédent</button>
-    <button onclick="nextImage()">Suivant ➡</button>
+<div class="nav-buttons">
+    <button id="prev">⬅ Précédent</button>
+    <button id="next">Suivant ➡</button>
+    <a href="season1.html"><button>🏠 Retour </button></a>
 </div>
 
 <script>
-    const images = [];
-    for (let i = 1; i <= 127; i++) {
-        images.push(`../Saison 1/Épisode 3/${i}.png`);
+    const totalImages = 127;
+    const path = "../Saison 1/Épisode 3/";
+    let current = 1;
+
+    const imgElement = document.getElementById('episode-image');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    function updateImage() {
+        imgElement.src = path + current + ".png";
+        imgElement.alt = "Image " + current;
     }
 
-    let index = 0;
-
-    function showImage() {
-        document.getElementById("episodeImage").src = images[index];
-        document.getElementById("episodeImage").alt = "Page " + (index + 1);
-    }
-
-    function nextImage() {
-        if (index < images.length - 1) {
-            index++;
-            showImage();
-        }
-    }
-
-    function prevImage() {
-        if (index > 0) {
-            index--;
-            showImage();
-        }
-    }
+    prevBtn.addEventListener('click', () => { if(current > 1) { current--; updateImage(); } });
+    nextBtn.addEventListener('click', () => { if(current < totalImages) { current++; updateImage(); } });
 </script>
 
 </body>

@@ -1,52 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Saison 1</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saison 1 - Alien: The Last Dance</title>
+<style>
+    body {
+        font-family: "Abel Static", sans-serif;
+        background-image: url("Autre/groupe.png"); /* ton fond actuel */
+        background-size: cover;
+        background-position: top center;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        padding: 0;
+
+        /* CENTRER verticalement et horizontalement sur PC */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* prend toute la hauteur de la fenêtre */
+    }
+
+    h1 {
+        font-size: 3em;
+        margin: 20px 0 40px 0;
+        text-align: center;
+    }
+
+    /* Conteneur des blocs épisodes */
+    .episodes-container {
+        display: flex;
+        justify-content: center; /* aligne horizontalement sur PC */
+        gap: 30px;               /* espace entre les blocs */
+        flex-wrap: nowrap;       /* une ligne seulement sur PC */
+    }
+
+    /* Blocs épisodes */
+    .episode-block {
+        background-color: rgba(34,34,34,0.85);
+        width: 180px;   /* un peu plus gros sur PC */
+        height: 120px;  /* hauteur fixe pour centrer le texte */
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        /* centrer texte */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .episode-block a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .episode-block:hover {
+        background-color: rgba(68,68,68,0.8);
+    }
+
+    /* === Responsive mobile === */
+    @media (max-width: 600px) {
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-    background-image: url(Autres/Groupe.png); 
-    background-size: cover;       
-    background-position: top center; 
-    background-repeat: no-repeat; 
-}
+            min-height: auto; /* laisse le contenu défiler normalement */
+        }
 
         h1 {
-            font-size: 75px;
-            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .episodes-container {
+            flex-direction: column; /* empile verticalement */
+            gap: 15px;
         }
 
         .episode-block {
-            display: inline-block;
-            background-color: #ffecec;
-            color: rgb(0, 0, 0);
-            padding: 20px 40px;
-            margin: 15px;
-            font-size: 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: 0.3s;
+            width: 80%; /* prend la largeur de l’écran */
+            height: auto; /* s’adapte au texte */
+            padding: 15px;
+            font-size: 1em;
         }
-
-        .episode-block:hover {
-            background-color: #a7f8e0;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
-    <h1>𝙎𝙖𝙞𝙨𝙤𝙣 1</h1>
+<h1>Saison 1</h1>
 
-    <!-- Blocs d'épisodes -->
-    <a href="episode1.html" class="episode-block">1┆⬛・𝘓𝘦 𝘳𝘦𝘵𝘰𝘶𝘳</a>
-    <a href="episode2.html" class="episode-block">2┆🔵・𝘈𝘭𝘭𝘦𝘳 𝘴𝘢𝘯𝘴 𝘳𝘦𝘵𝘰𝘶𝘳</a>
-    <a href="episode3.html" class="episode-block">3┆🌋・𝘚é𝘫𝘰𝘶𝘳 𝘦𝘯 𝘦𝘯𝘧𝘦𝘳</a>
-    <a href="episode4.html" class="episode-block">4┆🔥・𝘓𝘢 𝘧𝘰𝘳𝘤𝘦 𝘥𝘦 𝘤𝘦𝘯𝘵 â𝘮𝘦𝘴</a>
-    <a href="episode5.html" class="episode-block">5┆🏯・Â𝘮𝘦 𝘤𝘪𝘣𝘭é𝘦</a>
-
+<div class="episodes-container">
+    <div class="episode-block"><a href="episode1.html">1┆⬛・𝘓𝘦 𝘳𝘦𝘵𝘰𝘶𝘳</a></div>
+    <div class="episode-block"><a href="episode2.html">2┆🔵・𝘈𝘭𝘭𝘦𝘳 𝘴𝘢𝘯𝘴 𝘳𝘦𝘵𝘰𝘶𝘳</a></div>
+    <div class="episode-block"><a href="episode3.html">3┆🌋・𝘚é𝘫𝘰𝘶𝘳 𝘦𝘯 𝘦𝘯𝘧𝘦𝘳</a></div>
+    <div class="episode-block"><a href="episode4.html">4┆🔥・𝘓𝘢 𝘧𝘰𝘳𝘤𝘦 𝘥𝘦 𝘤𝘦𝘯𝘵 â𝘮𝘦𝘴</a></div>
+    <div class="episode-block"><a href="episode5.html">5┆🏯・Â𝘮𝘦 𝘤𝘪𝘣𝘭é𝘦</a></div>
+</div>
 
 </body>
 </html>

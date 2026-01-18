@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Saison 1 – Épisode 5</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        img {
+            max-width: 95%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 22px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #43a047;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Saison 1 – Épisode 5</h1>
+
+<img id="episodeImage" src="../Saison 1/Épisode 5/1.png" alt="Page 1">
+
+<div class="buttons">
+    <button onclick="prevImage()">⬅ Précédent</button>
+    <button onclick="nextImage()">Suivant ➡</button>
+</div>
+
+<script>
+    const images = [];
+    for (let i = 1; i <= 159; i++) {
+        images.push(`../Saison 1/Épisode 5/${i}.png`);
+    }
+
+    let index = 0;
+
+    function showImage() {
+        document.getElementById("episodeImage").src = images[index];
+    }
+
+    function nextImage() {
+        if (index < images.length - 1) {
+            index++;
+            showImage();
+        }
+    }
+
+    function prevImage() {
+        if (index > 0) {
+            index--;
+            showImage();
+        }
+    }
+</script>
+
+</body>
+</html>

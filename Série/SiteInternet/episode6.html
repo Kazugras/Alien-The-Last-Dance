@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Épisode 6 - Alien: The Last Dance</title>
+<style>
+    body {
+        font-family: "Abel Static", sans-serif;
+        background-image: url("../Saison 1/Épisode 5/fond-ep5.png");
+        background-size: cover;
+        background-position: center;
+        color: rgb(3, 0, 0);
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    h1 { font-size: 2em; margin: 20px 0; }
+
+    #episode-image {
+        max-width: 90%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
+
+    .nav-buttons { margin: 20px 0; }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        background-color: rgba(51,51,51,0.8);
+        color: white;
+    }
+
+    button:hover { background-color: rgba(85,85,85,0.8); }
+
+    @media (max-width: 600px) {
+        h1 { font-size: 1.5em; }
+        button { font-size: 1em; padding: 8px 15px; }
+        #episode-image { width: 95%; }
+    }
+</style>
+</head>
+<body>
+
+<h1>6┆💥・𝘋𝘦 𝘧𝘦𝘶 𝘦𝘵 𝘥𝘦 𝘤𝘦𝘯𝘥𝘳𝘦𝘴</h1>
+
+<img id="episode-image" src="../Saison 1/Épisode 6/1.png" alt="Image 1">
+
+<div class="nav-buttons">
+    <button id="prev">⬅ Précédent</button>
+    <button id="next">Suivant ➡</button>
+    <a href="season1.html"><button>🏠 Retour </button></a>
+</div>
+
+<script>
+    const totalImages = 243;
+    const path = "../Saison 1/Épisode 6/";
+    let current = 1;
+
+    const imgElement = document.getElementById('episode-image');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    function updateImage() {
+        imgElement.src = path + current + ".png";
+        imgElement.alt = "Image " + current;
+    }
+
+    prevBtn.addEventListener('click', () => { if(current > 1) { current--; updateImage(); } });
+    nextBtn.addEventListener('click', () => { if(current < totalImages) { current++; updateImage(); } });
+</script>
+
+</body>
+</html>
